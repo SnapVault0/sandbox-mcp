@@ -1,0 +1,41 @@
+{
+  "name": "sandbox-mcp",
+  "version": "0.1.0",
+  "description": "Open-source framework for integrating local LLMs with Model Context Protocol",
+  "private": true,
+  "packageManager": "pnpm@10.6.5",
+  "workspaces": [
+    "packages/*",
+    "packages/mcp-server/examples/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "clean": "turbo run clean",
+    "core": "pnpm --filter @sandbox-mcp/mcp-core",
+    "server": "pnpm --filter @sandbox-mcp/mcp-server",
+    "sequential-thinking": "pnpm --filter @sandbox-mcp/sequential-thinking"
+  },
+  "keywords": [
+    "mcp",
+    "llm",
+    "local-first",
+    "development",
+    "framework",
+    "typescript"
+  ],
+  "author": "SMCP Community",
+  "license": "AGPL-3.0-or-later",
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.13.10",
+    "@typescript-eslint/eslint-plugin": "^8.27.0",
+    "@typescript-eslint/parser": "^8.27.0",
+    "eslint": "^9.22.0",
+    "jest": "^29.7.0",
+    "turbo": "latest",
+    "typescript": "^5.8.2"
+  }
+}

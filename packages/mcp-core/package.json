@@ -1,0 +1,40 @@
+{
+  "name": "@sandbox-mcp/mcp-core",
+  "version": "0.1.0",
+  "description": "Core MCP protocol implementation for SandboxMCP",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "ts-node ./examples/weather-tool.ts",
+    "build": "tsc",
+    "test": "jest",
+    "lint": "eslint src/**/*.ts"
+  },
+  "dependencies": {
+    "axios": "^1.8.4",
+    "openai": "^4.88.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.13.10",
+    "@typescript-eslint/eslint-plugin": "^8.27.0",
+    "@typescript-eslint/parser": "^8.27.0",
+    "dotenv": "^16.4.7",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "AGPL-3.0",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  }
+}

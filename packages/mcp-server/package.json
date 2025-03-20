@@ -1,0 +1,51 @@
+{
+  "name": "@sandbox-mcp/mcp-server",
+  "version": "0.1.0",
+  "description": "MCP server framework implementation for SMCP",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "lint": "eslint src/**/*.ts",
+    "clean": "rimraf dist",
+    "prepublishOnly": "pnpm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "AGPL-3.0",
+  "packageManager": "pnpm@10.6.5",
+  "dependencies": {
+    "@sandbox-mcp/mcp-core": "workspace:*",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.13.10",
+    "@typescript-eslint/eslint-plugin": "^8.27.0",
+    "@typescript-eslint/parser": "^8.27.0",
+    "eslint": "^9.22.0",
+    "jest": "^29.7.0",
+    "rimraf": "^6.0.1",
+    "ts-jest": "^29.2.6",
+    "typescript": "^5.8.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/smcp.git",
+    "directory": "packages/mcp-server"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  }
+}

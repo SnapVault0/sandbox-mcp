@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  mcp-server:
+    build:
+      context: .
+      dockerfile: examples/sequential-thinking/Dockerfile
+    environment:
+      - NODE_ENV=test
+      - OPENAI_API_KEY=your-openai-api-key
+    volumes:
+      - ./packages/mcp-server:/app/packages/mcp-server
+      - ./examples/sequential-thinking:/app/examples/sequential-thinking
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    command: npm run test:server
+
+  mcp-client:
+    build:
+      context: .
+      dockerfile: packages/mcp-client/Dockerfile
+    environment:
+      - NODE_ENV=test
+      - OPENAI_API_KEY=your-openai-api-key
+    volumes:
+      - ./packages/mcp-core:/app/packages/mcp-core
+      - ./packages/mcp-client:/app/packages/mcp-client
+      - /app/node_modules
+    ports:
+      - "3001:3001"
+    command: npm run test:client
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+
+volumes:
+  redis-data:
